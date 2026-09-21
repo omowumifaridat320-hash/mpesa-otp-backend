@@ -67,11 +67,10 @@ app.post('/api/send-otp', async (req, res) => {
   } catch (error) {
     console.error('[ONFON API NOTICE]:', error.response ? error.response.data : error.message);
     
-    // Fallback response: shows OTP input field and logs code to terminal
-    return res.json({ 
-      success: true, 
-      message: 'OTP generated! (Check terminal window for debug code).' 
-    });
+    return res.status(500).json({
+  success: false,
+  message: 'Failed to send SMS via provider. Please try again later.'
+});
   }
 });
 
