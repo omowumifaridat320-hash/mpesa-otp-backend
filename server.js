@@ -9,9 +9,9 @@ app.use(express.json());
 
 const otpStore = {};
 
-const ONFON_API_KEY = process.env.ONFON_API_KEY || 'PENDING_BUYER_KEY'; 
-const ONFON_CLIENT_ID = 'eastafricafutures';
-const ONFON_SENDER_ID = 'FUTURES LTD';
+const ONFON_API_KEY = process.env.ONFON_API_KEY;
+const ONFON_CLIENT_ID = process.env.ONFON_CLIENT_ID || 'eastafricafutures';
+const ONFON_SENDER_ID = process.env.ONFON_SENDER_ID || 'FUTURES LTD';
 const ONFON_ACCESS_KEY = ONFON_CLIENT_ID;
 
 // 1. Send OTP Endpoint
